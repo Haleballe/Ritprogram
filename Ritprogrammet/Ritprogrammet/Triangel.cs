@@ -9,6 +9,12 @@ namespace Ritprogrammet
 {
     class Triangel
     {
-
+        int x = 50;
+        int y = 50;
+        public void triangelRitare(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
     }
 }

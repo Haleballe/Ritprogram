@@ -14,6 +14,7 @@ namespace Ritprogrammet
     {
         public int x = 20;
         public int y = 20;
+        public int radio;
         public Color farg = System.Drawing.Color.Black;
 
         public Form1()
@@ -88,6 +89,27 @@ namespace Ritprogrammet
             {
                 farg = colorDlg.Color;
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Rektangel minRektangel = new Rektangel();
+            minRektangel.rektangelRitare(x, y);
+            radio = 1;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            Cirkel minRektangel = new Cirkel();
+            minRektangel.cirkelRitare(x, y);
+            radio = 2;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            Triangel minRektangel = new Triangel();
+            minRektangel.triangelRitare(x, y);
+            radio = 3;
         }
     }
 }

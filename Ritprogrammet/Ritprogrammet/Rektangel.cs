@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Ritprogrammet
 {
-    class Rektangel
+    public class Rektangel
     {
+        int x = 50;
+        int y = 50;
+        public void rektangelRitare(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
     }
 }
