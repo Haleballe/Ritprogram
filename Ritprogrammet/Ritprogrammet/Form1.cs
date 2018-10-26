@@ -57,12 +57,25 @@ namespace Ritprogrammet
                 MessageBox.Show("Error not a valid number of y", "Number", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 y = 0;
             }
-            System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(farg);
-            System.Drawing.Graphics formGraphics;
-            formGraphics = pictureBox1.CreateGraphics();
-            formGraphics.FillRectangle(myBrush, new Rectangle(e.Location.X, e.Location.Y, x, y));
-            myBrush.Dispose();
-            formGraphics.Dispose();
+            if(radio == 1)
+            {
+                System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(farg);
+                System.Drawing.Graphics formGraphics;
+                formGraphics = pictureBox1.CreateGraphics();
+                formGraphics.FillRectangle(myBrush, new Rectangle(e.Location.X, e.Location.Y, x, y));
+                myBrush.Dispose();
+                formGraphics.Dispose();
+            }
+            else if(radio == 2)
+            {
+                System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(farg);
+                System.Drawing.Graphics formGraphics;
+                formGraphics = pictureBox1.CreateGraphics();
+                formGraphics.FillEllipse(myBrush, new Rectangle(e.Location.X, e.Location.Y, x, y));
+                myBrush.Dispose();
+                formGraphics.Dispose();
+            }
+
 
         }
 
