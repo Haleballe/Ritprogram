@@ -36,15 +36,31 @@ namespace Ritprogrammet
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            x = int.Parse(textBox1.Text);
-            y = int.Parse(textBox2.Text);
-
+            try
+            {
+                x = int.Parse(textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Error not a valid number of x", "Number", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                x = 0;
+            }
+            try
+            {
+                y = int.Parse(textBox2.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Error not a valid number of y", "Number", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                y = 0;
+            }
             System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
             System.Drawing.Graphics formGraphics;
             formGraphics = pictureBox1.CreateGraphics();
             formGraphics.FillRectangle(myBrush, new Rectangle(e.Location.X, e.Location.Y, x, y));
             myBrush.Dispose();
             formGraphics.Dispose();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
