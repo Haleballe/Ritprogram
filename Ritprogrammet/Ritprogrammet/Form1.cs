@@ -12,8 +12,10 @@ namespace Ritprogrammet
 {
     public partial class Form1 : Form
     {
-       public int x = 20;
-       public int y = 20;
+        public int x = 20;
+        public int y = 20;
+        public Color farg = System.Drawing.Color.Black;
+
         public Form1()
         {
             InitializeComponent();
@@ -54,7 +56,7 @@ namespace Ritprogrammet
                 MessageBox.Show("Error not a valid number of y", "Number", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 y = 0;
             }
-            System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+            System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(farg);
             System.Drawing.Graphics formGraphics;
             formGraphics = pictureBox1.CreateGraphics();
             formGraphics.FillRectangle(myBrush, new Rectangle(e.Location.X, e.Location.Y, x, y));
@@ -77,6 +79,15 @@ namespace Ritprogrammet
         {
             textBox2.Clear();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDlg = new ColorDialog();
+            if (colorDlg.ShowDialog() == DialogResult.OK)
+            {
+                farg = colorDlg.Color;
+            }
         }
     }
 }
