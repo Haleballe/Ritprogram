@@ -24,6 +24,16 @@ namespace Ritprogrammet
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void m(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
 
         }
     }
