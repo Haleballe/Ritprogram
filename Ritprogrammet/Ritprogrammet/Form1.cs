@@ -38,11 +38,13 @@ namespace Ritprogrammet
         {
             x = int.Parse(textBox1.Text);
             y = int.Parse(textBox2.Text);
-            Graphics graphicsObj;
-            graphicsObj = pictureBox1.CreateGraphics();
-            Pen minpenna = new Pen(Color.Black, 50);
-            Rectangle minrektangle = new Rectangle(e.Location.X, e.Location.Y, x, y);
-            graphicsObj.DrawRectangle(minpenna, minrektangle);
+
+            System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+            System.Drawing.Graphics formGraphics;
+            formGraphics = pictureBox1.CreateGraphics();
+            formGraphics.FillRectangle(myBrush, new Rectangle(e.Location.X, e.Location.Y, x, y));
+            myBrush.Dispose();
+            formGraphics.Dispose();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -58,6 +60,7 @@ namespace Ritprogrammet
         private void textBox2_Click(object sender, EventArgs e)
         {
             textBox2.Clear();
+
         }
     }
 }
