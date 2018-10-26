@@ -36,8 +36,25 @@ namespace Ritprogrammet
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            x = int.Parse(textBox1.Text);
-            y = int.Parse(textBox2.Text);
+            try
+            {
+                x = int.Parse(textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Error not a valid number of x", "Number", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                x = 0;
+            }
+            try
+            {
+                y = int.Parse(textBox2.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Error not a valid number of y", "Number", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                y = 0;
+            }
+
             Graphics graphicsObj;
             graphicsObj = pictureBox1.CreateGraphics();
             Pen minpenna = new Pen(Color.Black, 50);
