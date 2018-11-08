@@ -75,8 +75,6 @@ namespace Ritprogrammet
                 myBrush.Dispose();
                 formGraphics.Dispose();
             }
-
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
