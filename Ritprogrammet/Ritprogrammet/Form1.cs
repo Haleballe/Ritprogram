@@ -15,6 +15,7 @@ namespace Ritprogrammet
         public int x = 20;
         public int y = 20;
         public int radio;
+        private bool isDown;
         public Color farg = System.Drawing.Color.Black;
 
         public Form1()
@@ -35,7 +36,7 @@ namespace Ritprogrammet
         private void m(object sender, EventArgs e)
         {
 
-        }
+        }       
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -57,7 +58,7 @@ namespace Ritprogrammet
                 MessageBox.Show("Error not a valid number of y", "Number", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 y = 0;
             }
-            if(radio == 1)
+            if (radio == 1)
             {
                 System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(farg);
                 System.Drawing.Graphics formGraphics;
@@ -66,7 +67,7 @@ namespace Ritprogrammet
                 myBrush.Dispose();
                 formGraphics.Dispose();
             }
-            else if(radio == 2)
+            else if (radio == 2)
             {
                 System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(farg);
                 System.Drawing.Graphics formGraphics;
@@ -75,7 +76,17 @@ namespace Ritprogrammet
                 myBrush.Dispose();
                 formGraphics.Dispose();
             }
-        }
+            else if (radio == 3)
+            {
+                System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(farg);
+                System.Drawing.Graphics formGraphics;
+                formGraphics = pictureBox1.CreateGraphics();
+                Point[] points = { new Point((e.Location.X + 25) + x/2, e.Location.Y + 50), new Point(e.Location.X, e.Location.Y - y), new Point((e.Location.X - 25) -x/2, e.Location.Y + 50) };
+                formGraphics.FillPolygon(myBrush, points);
+                myBrush.Dispose();
+                formGraphics.Dispose();
+            }
+    }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -121,6 +132,16 @@ namespace Ritprogrammet
             Triangel minRektangel = new Triangel();
             minRektangel.triangelRitare(x, y);
             radio = 3;
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
