@@ -148,5 +148,10 @@ namespace Ritprogrammet
         {
             pictureBox1.Image = null;
         }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            radio = 4;
+        }
     }
 }
