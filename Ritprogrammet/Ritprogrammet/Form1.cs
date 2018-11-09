@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,9 @@ namespace Ritprogrammet
         public int x = 20;
         public int y = 20;
         public int radio;
-        private bool isDown;
         public Color farg = System.Drawing.Color.Black;
+        Point lastPoint = Point.Empty;
+        bool isMouseDown = new Boolean();
 
         public Form1()
         {
@@ -156,17 +158,40 @@ namespace Ritprogrammet
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-
+            isMouseDown = false;
+            lastPoint = Point.Empty;
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-
+            lastPoint = e.Location;
+            isMouseDown = true;
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-
+            if (radio == 4)
+            {
+                textBox1.Text = "0";
+                textBox2.Text = "0";
+                if (isMouseDown == true)
+                {
+                    if (lastPoint != null)
+                    {
+                        if (pictureBox1.Image == null)
+                        {
+                            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+                            pictureBox1.Image = bmp;
+                        }
+                        using (Graphics g = Graphics.FromImage(pictureBox1.Image))
+                        {
+                            g.DrawLine(new Pen(farg, 5), lastPoint, e.Location);
+                        }
+                        pictureBox1.Invalidate();
+                        lastPoint = e.Location;
+                    }
+                }
+            }
         }
     }
 }
