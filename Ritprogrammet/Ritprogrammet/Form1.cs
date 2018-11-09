@@ -81,7 +81,7 @@ namespace Ritprogrammet
                 System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(farg);
                 System.Drawing.Graphics formGraphics;
                 formGraphics = pictureBox1.CreateGraphics();
-                Point[] points = { new Point((e.Location.X + 25) + x/2, e.Location.Y + 50), new Point(e.Location.X, e.Location.Y - y), new Point((e.Location.X - 25) -x/2, e.Location.Y + 50) };
+                Point[] points = { new Point((e.Location.X) + x/2, e.Location.Y), new Point(e.Location.X, e.Location.Y - y), new Point((e.Location.X) -x/2, e.Location.Y) };
                 formGraphics.FillPolygon(myBrush, points);
                 myBrush.Dispose();
                 formGraphics.Dispose();
@@ -142,6 +142,11 @@ namespace Ritprogrammet
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
         }
     }
 }
