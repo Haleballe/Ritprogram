@@ -50,8 +50,8 @@
             this.pictureBox1.Size = new System.Drawing.Size(1162, 654);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            //this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            //this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
@@ -105,7 +105,7 @@
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Size x";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            //this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -116,7 +116,7 @@
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = "Size Y";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
-            this.textBox2.TextChanged += new System.EventHandler(this.m);
+            //this.textBox2.TextChanged += new System.EventHandler(this.m);
             // 
             // button1
             // 
@@ -170,8 +170,8 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.pictureBox1_Click);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            //this.Load += new System.EventHandler(this.pictureBox1_Click);
+            //this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -30,16 +30,6 @@ namespace Ritprogrammet
                 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void m(object sender, EventArgs e)
-        {
-
-        }       
-
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
             try
@@ -90,11 +80,6 @@ namespace Ritprogrammet
             }
     }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
@@ -136,16 +121,6 @@ namespace Ritprogrammet
             radio = 3;
         }
 
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
@@ -180,8 +155,8 @@ namespace Ritprogrammet
                     {
                         if (pictureBox1.Image == null)
                         {
-                            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-                            pictureBox1.Image = bmp;
+                            Bitmap minMap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+                            pictureBox1.Image = minMap;
                         }
                         using (Graphics g = Graphics.FromImage(pictureBox1.Image))
                         {
